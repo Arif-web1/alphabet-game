@@ -10,7 +10,7 @@
 </head>
 <body  class="bg-[#010313] w-full min-h-screen ">
 <!-- landing page -->
-    <section  id="landing_page" class="text-white bg-[url('/images/background.png')] bg-no-repeat bg-center w-full min-h-screen flex justify-center items-center ">
+    <section  id="landing_page" class="text-white bg-[url('/images/background.png')] bg-no-repeat bg-center w-full min-h-screen flex justify-center items-center hidden">
 <!-- container -->
         <div class="flex flex-col gap-8 justify-center items-center"> 
             <h1 class="text-9xl anton-regular">
@@ -30,7 +30,7 @@
 </div>
 <!-- keyboard -->
  <div class="">
-    <div class="my-1 flex max-w-full justify-center gap-1">
+    <div id="container" class="my-1 flex max-w-full justify-center gap-1">
         <kbd id="q" class="kbd">q</kbd>
         <kbd id="w" class="kbd">w</kbd>
         <kbd id="e" class="kbd">e</kbd>
@@ -46,7 +46,7 @@
         <kbd id="a" class="kbd">a</kbd>
         <kbd id="s" class="kbd">s</kbd>
         <kbd id="d" class="kbd">d</kbd>
-        <kbd id="f"class="kbd">f</kbd>
+        <kbd id="f" class="kbd">f</kbd>
         <kbd id="g" class="kbd">g</kbd>
         <kbd id="h" class="kbd">h</kbd>
         <kbd id="j" class="kbd">j</kbd>
@@ -95,7 +95,19 @@
 </div>
     </section>
     <!-- result section -->
-    <section class=""></section>
+    <section class="text-white bg-[url('/images/background.png')] bg-no-repeat bg-center w-full min-h-screen flex flex-col justify-center items-center ">
+        <!-- result box -->
+<div class="p-6  bg-gradient-to-r from-[#b16fbe] [#FFFFFF] to-[#7c39a344] flex flex-col justify-center items-center gap-4 rounded-lg">
+    <!-- score show -->
+    <div class=""><h1 class="text-6xl font-semibold">score : <span class="" id="">15</span></h1> </div>
+    <!-- button -->
+    <div class=""><button id="" class="btn bg-[#ffffff] text-black border  rounded-lg ps-8 pr-8 shadow-lg">Play Now</button></div>
+    <!-- advice -->
+    <div class=""><p>Practice will make you Pro</p></div>
+</div>
+
+
+    </section>
     </body>
     <script src="script.js"></script>
 </body>

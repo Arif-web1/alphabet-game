@@ -9,18 +9,35 @@ function play_game(params) {
     screen_input.innerText = random_word;
     const button_bg=document.getElementById(random_word);
     button_bg.style.backgroundColor='orange';
-    button_bg.style.color='white';
+    button_bg.style.color='white';  
     console.log(screen_input);
-  
+  const start_game=playing_game_now();
   }
   // random alphabet
   function random_alphabet(params) {
     let alphabet_box = [];
     const all_alphabet = document.querySelectorAll("kbd");
-  console.log("all_alphabet--->", all_alphabet);
+  // console.log("all_alphabet--->", all_alphabet);
   
     for (const element of all_alphabet) {
       alphabet_box.push(element.innerText);
     }
     return alphabet_box[Math.floor(Math.random() * alphabet_box.length)];
   }
+
+// keyup system
+
+function playing_game_now(params) {
+  const screen = document.getElementById("screen");
+// console.log(screen);
+//  console.log(random_word);
+ 
+console.log('screen',screen_input);
+
+window.addEventListener('keypress',function (event) {
+  const press_word=event.key;
+console.log("press",press_word);
+
+
+})
+}

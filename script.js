@@ -24,7 +24,10 @@ function random_alphabet(params) {
   }
   return alphabet_box[Math.floor(Math.random() * alphabet_box.length)];
 }
-
+const score=document.getElementById('score');
+const score_update=score.innerText;
+const final_score=parseFloat(score_update);
+console.log(final_score);
 // keyup system
 
 function playing_game_now(random) {
@@ -35,13 +38,29 @@ function playing_game_now(random) {
 // console.log('screen',screen_input);
 
 window.addEventListener('keyup',function (event) {
-  const press_word=event.key;
-  console.log(press_word);
-  // console.log('random',screen);
   const screen_input = document.getElementById('text').innerText;
+  // console.log('random',screen_input);
+  const press_word=event.key;
+  console.log(screen_input,press_word);
   
-if (screen_input==press_word) {
+
+
+if (press_word==screen_input) {
+const increse_score=final_score+1;
+score.innerText=increse_score;
+document.querySelector()
+  // console.log(increse_score);
+  
+  
+  // const score_update=parseFloat(score);
+  // console.log(score_update);
+  
   play_game()
+
+  
+  
+
+ 
   
 } else {
   console.log('not');

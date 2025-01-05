@@ -7,64 +7,49 @@ function play_game(params) {
 
   const random_word = random_alphabet();
   screen_input.innerText = random_word;
-  const button_bg=document.getElementById(random_word);
-  button_bg.style.backgroundColor='orange';
-  button_bg.style.color='white';  
-  console.log(screen_input);
-const start_game=playing_game_now();
+  const button_bg = document.getElementById(random_word);
+  button_bg.style.backgroundColor = "orange";
+  button_bg.style.color = "white";
+  const start_game = playing_game_now(random_word);
 }
 // random alphabet
 function random_alphabet(params) {
   let alphabet_box = [];
   const all_alphabet = document.querySelectorAll("kbd");
-// console.log("all_alphabet--->", all_alphabet);
+  // console.log("all_alphabet--->", all_alphabet);
 
   for (const element of all_alphabet) {
     alphabet_box.push(element.innerText);
   }
   return alphabet_box[Math.floor(Math.random() * alphabet_box.length)];
 }
-const score=document.getElementById('score');
-const score_update=score.innerText;
-const final_score=parseFloat(score_update);
-console.log(final_score);
+
 // keyup system
 
 function playing_game_now(random) {
-  // const new_rando=document.getElementById(random_word)
+  window.addEventListener("keyup", function (event) {
+    const press_word = event.key;
+    console.log("press_word",press_word)
+    if (press_word == random) {
+      increaseNumber();
 
-//  console.log(random_word);
+      this.setTimeout(() => {
+        play_game();
+      }, 100);
 
-// console.log('screen',screen_input);
-
-window.addEventListener('keyup',function (event) {
-  const screen_input = document.getElementById('text').innerText;
-  // console.log('random',screen_input);
-  const press_word=event.key;
-  console.log(screen_input,press_word);
-  
-
-
-if (press_word==screen_input) {
-const increse_score=final_score+1;
-score.innerText=increse_score;
-document.querySelector()
-  // console.log(increse_score);
-  
-  
-  // const score_update=parseFloat(score);
-  // console.log(score_update);
-  
-  play_game()
-
-  
-  
-
- 
-  
-} else {
-  console.log('not');
-  
+    } else {
+      // const button_bg = document.getElementById(random);
+      // button_bg.style.backgroundColor = "red";
+      // button_bg.style.color = "white";
+      // playing_game_now(random)
+    }
+  });
 }
-})
-}
+
+const increaseNumber = () => {
+  const score = document.getElementById("score");
+  const score_update = score.innerText;
+  const final_score = parseFloat(score_update);
+  const increse_score = final_score + 1;
+  score.innerText = increse_score;
+};
